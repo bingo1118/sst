@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.test.jpushServer"
+    android:installLocation="preferExternal"
+    android:versionCode="3"
+    android:versionName="3.0">
+	<uses-feature android:glEsVersion="0x00020000" android:required="true"></uses-feature>
+    <permission
+        android:name="com.test.jpushServer.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-sdk android:minSdkVersion="8" />
+
+    <application
+        android:name="com.jwkj.global.MyApp"
+        android:icon="@drawable/ic_launcher"
+        android:persistent="true"
+        android:label="@string/app_name" 
+        >
+		<activity android:name="com.jwkj.activity.LogoActivity"
+		    android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+		    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:label="@string/app_name">
+			<intent-filter>
+			    <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name="com.jwkj.activity.AlarmFireLinkActivity" 
+		    android:launchMode="singleTask"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:windowSoftInputMode="stateAlwaysHidden"
+			android:configChanges="orientation|keyboardHidden"
+			android:screenOrientation="nosensor"
+			android:label="@string/app_name">
+			<intent-filter>
+			    <category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name="com.jwkj.activity.MainActivity" 
+		    android:launchMode="singleTask"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:windowSoftInputMode="stateAlwaysHidden"
+			android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:label="@string/app_name">
+			<intent-filter>
+			    <category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		
+        <activity android:name="com.jwkj.activity.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+        
+         <activity
+            android:name="com.jwkj.CallActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+        
+         <activity
+            android:name="com.jwkj.activity.ImageCheckActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name" >
+        </activity> 
+        
+        <activity android:name="com.jwkj.activity.RegisterActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.RegisterActivity2" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.VerifyPhoneActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.AboutActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			 android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.MonitorActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="landscape"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.VideoActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="landscape"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.SettingSystemActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.CutImageActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.AccountInfoActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.LocalDeviceListActivity" android:configChanges="locale|orientation"
+		    android:launchMode="singleTask"  
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.SettingBellRingActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.SettingSdBellActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.MainControlActivity" android:windowSoftInputMode="stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			android:alwaysRetainTaskState="true"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.AlarmActivity" android:windowSoftInputMode="stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name="com.jwkj.activity.DeviceUpdateActivity" android:windowSoftInputMode="stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			android:theme="@style/MyTranslucent"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>	
+		<activity android:name="com.jwkj.activity.QRCodeActivity" android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTask"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			android:theme="@style/MyTranslucent2"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name="com.jwkj.activity.AlarmRecordActivity" android:windowSoftInputMode="stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name="com.jwkj.activity.ForwardActivity" android:windowSoftInputMode="stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			 android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name="com.jwkj.activity.ForwardDownActivity" android:windowSoftInputMode="stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			 android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.AlarmSetActivity" android:windowSoftInputMode="stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation"
+			 android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.PlayBackListActivity" android:windowSoftInputMode="adjustUnspecified|stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation|keyboardHidden"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.PlayBackActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="landscape"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.SysMsgActivity" android:windowSoftInputMode="adjustUnspecified|stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation|keyboardHidden"
+			 android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.ImageBrowser" android:windowSoftInputMode="adjustUnspecified|stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation|keyboardHidden"
+			 android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.SearchListActivity" android:windowSoftInputMode="adjustUnspecified|stateHidden"
+			android:screenOrientation="portrait"
+			android:configChanges="locale|orientation|keyboardHidden"
+			 android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.ModifyBoundEmailActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		
+		<activity android:name="com.jwkj.activity.ModifyAlarmIdActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.AddAlarmMaskIdActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.ModifyNpcPasswordActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.AddContactActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.AddContactNextActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.ModifyContactActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.ModifyLoginPasswordActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateVisible"
+			android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.jwkj.activity.SysNotifyActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:alwaysRetainTaskState="true"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.UnbindPhoneActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:alwaysRetainTaskState="true"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.ModifyAccountEmailActivity" 
+		    android:configChanges="locale|orientation"
+		    android:windowSoftInputMode="adjustUnspecified|stateHidden"
+			android:screenOrientation="portrait"
+			android:alwaysRetainTaskState="true"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.ModifyAccountPhoneActivity" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:alwaysRetainTaskState="true"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.ModifyAccountPhoneActivity2" android:configChanges="locale|orientation"
+			android:screenOrientation="portrait"
+			android:alwaysRetainTaskState="true"
+			android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity> 
+		<activity android:name="com.jwkj.activity.ForgetPassword" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+		    <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+        <activity android:name="com.jwkj.activity.AltogetherRegisterActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.ModifyNpcVisitorPasswordActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+         <activity android:name="com.jwkj.activity.ThreeAddContactActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+         <activity android:name="com.jwkj.activity.WifiListActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.QRcodeActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.CreateQRcodeActivity" android:configChanges="locale|orientation"
+		    android:launchMode="singleTask"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.AlarmPushAccountActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.ImageSeeActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.RadarAddActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.WaitDeviceNetworkActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.AddWaitActicity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+         <activity android:name="com.jwkj.activity.RadarAddFirstActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.DoorBellActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+        <activity android:name="com.jwkj.activity.DoorBellNewActivity" android:configChanges="locale|orientation"
+		    android:screenOrientation="portrait"
+		    android:alwaysRetainTaskState="true"
+		    android:launchMode="singleInstance"
+		    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		    android:label="@string/app_name">
+            <intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+        </activity>
+		<service android:name="com.jwkj.global.MainService" android:enabled="true">
+		    <intent-filter android:priority="1000">
+		        <action android:name="com.yoosee.service.MAINSERVICE"/>
+		    </intent-filter>
+		</service>
+		<service android:name="com.jwkj.global.AlarmMessageService"></service>
+		
+		<service android:name="com.jwkj.global.DefenceService"></service>
+		
+		<receiver android:name="com.jwkj.global.TimeBootReceiver">
+		    <intent-filter>
+		        <action android:name="android.intent.action.TIME_TICK"/>
+		    </intent-filter>
+		</receiver>
+		
+		<receiver android:name="com.jwkj.global.AutoStartReceiver">
+	        <intent-filter>
+	        	<action android:name="android.intent.action.BOOT_COMPLETED" />
+	        	<category android:name="android.intent.category.HOME" />
+        	</intent-filter>
+    	</receiver> 
+    	
+		<!-- For test only 测试高级功能 -->
+       <activity android:name="com.example.jpushdemo.PushSetActivity" android:label="@string/app_name"></activity>
+        <!-- For test only 测试设置 -->
+       <activity android:name="com.example.jpushdemo.SettingActivity" android:label="@string/app_name"></activity>
+        <!-- For test only 测试状态通知栏，需要打开的Activity -->
+        <activity android:name="com.example.jpushdemo.TestActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="jpush.testAction" />
+                <category android:name="jpush.testCategory" />
+            </intent-filter>
+        </activity>  
+
+     
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.test.jpushServer" />
+            </intent-filter>
+        </activity>
+        <!-- Required  SDK核心功能-->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+    
+        
+        <!-- Required SDK 核心功能-->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="com.jwkj.global.SetTagService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="SetTagService" />
+            </intent-filter>
+        </service>
+        
+        <service
+            android:name="com.jwkj.global.OffLineStatusService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="OffLineStatusService" />
+            </intent-filter>
+        </service>
+        
+        
+        <service android:name="com.jwkj.global.UpdateService"></service>
+        
+        <!-- Required SDK核心功能-->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+             <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   <!--Required  显示通知栏 -->
+                <category android:name="com.test.jpushServer" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+             <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+   
+        </receiver>
+        
+        <!-- Required SDK核心功能-->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" android:exported="false"/>
+        
+        <!-- User defined.  For test only  用户自定义的广播接收器-->
+        <receiver
+            android:name="com.example.jpushdemo.MyReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!--Required  用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />  
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!--Required  用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!--Required  用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!--Required  用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" /> <!--Optional 用户接受Rich Push Javascript 回调函数的intent-->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /><!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.test.jpushServer" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <!--  </>值来自开发者平台取得的AppKey-->
+        <meta-data android:name="JPUSH_APPKEY" android:value="2948b14cec64462f4ce3e4f7" />
+        
+    </application>
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>   
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>   
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>   
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" /> 
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission> 
+	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+	<permission android:name="android.permission.CAMERA"></permission>
+    <uses-permission android:name="android.permission.CAMERA" />
+	<uses-feature android:name="android.hardware.camera" />
+	<uses-feature android:name="android.hardware.camera.autofocus" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" /> 
+	<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+	<!-- Required  一些系统要求的权限，如访问网络等-->
+    <uses-permission android:name="com.test.jpushServer.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	
+	<!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+</manifest>

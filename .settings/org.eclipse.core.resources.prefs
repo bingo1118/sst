@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/com/example/jpushdemo/MainActivity.java=UTF-8
+encoding//src/com/jwkj/SettingListener.java=UTF-8
+encoding//src/com/jwkj/activity=UTF-8
+encoding//src/com/jwkj/activity/AddContactActivity.java=UTF-8
+encoding//src/com/jwkj/activity/AddContactNextActivity.java=UTF-8
+encoding//src/com/jwkj/activity/AddWaitActicity.java=UTF-8
+encoding//src/com/jwkj/activity/AlarmActivity.java=UTF-8
+encoding//src/com/jwkj/activity/AlarmFireLinkActivity.java=UTF-8
+encoding//src/com/jwkj/activity/ModifyBoundEmailActivity.java=UTF-8
+encoding//src/com/jwkj/activity/ModifyContactActivity.java=UTF-8
+encoding//src/com/jwkj/activity/ModifyNpcPasswordActivity.java=UTF-8
+encoding//src/com/jwkj/adapter/MainAdapter.java=UTF-8
+encoding//src/com/jwkj/global/MD5.java=UTF-8
+encoding//src/com/jwkj/utils/FileUtils.java=UTF-8
+encoding/<project>=UTF-8

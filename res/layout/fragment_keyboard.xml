@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:focusable="true"
+    >
+	<RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/tab_bar"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/alarm_message"
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/title_text_size"
+            />
+         <ImageView 
+            android:id="@+id/clear"
+            android:layout_width="@dimen/tab_btn_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/tab_btn_margin"
+            android:textColor="@color/text_color_white"
+            android:background="@drawable/tab_button"
+            android:src="@drawable/research"
+            android:padding="@dimen/tab_btn_padding"
+            android:scaleType="center"
+            />
+    </RelativeLayout>
+
+    <com.lib.pullToRefresh.PullToRefreshListView 
+        android:id="@+id/list_allarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_title"
+        android:cacheColorHint="@null"
+        android:divider="@drawable/list_item_line"
+        android:dividerHeight="@dimen/separator_height"
+        />  
+    
+    <LinearLayout
+        android:id="@+id/layout_menu"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/add_device_height"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/layout_title"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/add_frame"
+        android:orientation="vertical"
+        android:visibility="gone"
+         >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6" >
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/radar_menu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="25"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/img_radar_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+             
+                android:background="@drawable/delete" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/img_radar_menu"
+                android:text="删除"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/text_size_normal" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:id="@+id/manually_menu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="25"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/img_manally_menu"
+                android:layout_width="@dimen/img_add_width"
+                android:layout_height="@dimen/img_add_height"
+                android:layout_centerVertical="true"
+                android:background="@drawable/research" />
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/img_manally_menu"
+                android:text="查询"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/text_size_normal" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include layout="@layout/timer_date_pick" />
+</RelativeLayout>
